@@ -1,0 +1,302 @@
+/* =========================================================
+   CASHDASH CASINO - STYLES (With Image Logo)
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #0b0d12;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --- Фон та Сяйво --- */
+.bg-effects {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bg-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 50% 50%, transparent 20%, #0b0d12 90%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+}
+
+.glow-cyan {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 200px;
+  background: radial-gradient(ellipse, rgba(0, 242, 254, 0.35) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(45px);
+}
+
+.glow-gold {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(50px);
+}
+
+/* --- Контейнер --- */
+.registration-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 460px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Логотип --- */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-img {
+  max-width: 290px;
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 25px rgba(0, 242, 254, 0.35)) drop-shadow(0 0 12px rgba(212, 175, 55, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 30px rgba(0, 242, 254, 0.5)) drop-shadow(0 0 18px rgba(212, 175, 55, 0.6));
+}
+
+/* --- Картка --- */
+.register-card {
+  width: 100%;
+  background: linear-gradient(145deg, #161a23 0%, #0d0f15 100%);
+  border: 2px solid transparent;
+  border-image: linear-gradient(180deg, #f1ca6f 0%, #794a08 50%, #00f2fe 100%) 1;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 242, 254, 0.15);
+  padding: 30px 25px;
+  position: relative;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.card-header h2 {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: linear-gradient(180deg, #ffffff 0%, #c5d1e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
+}
+
+.bonus-tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: #a0aab8;
+  letter-spacing: 1px;
+}
+
+.bonus-tag span {
+  color: #00f2fe;
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
+}
+
+/* --- Форма --- */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #d4af37;
+  letter-spacing: 1px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 14px;
+  background: #090b0e;
+  border: 1px solid #2a303d;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+  border-color: #00f2fe;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+  background: #0d1017;
+}
+
+.input-box input::placeholder {
+  color: #4a5366;
+}
+
+/* Чекбокс */
+.checkbox-group {
+  margin-top: 5px;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  height: 18px;
+  width: 18px;
+  background-color: #090b0e;
+  border: 1px solid #d4af37;
+  margin-right: 10px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: #d4af37;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.custom-checkbox .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 4px;
+  height: 9px;
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-text {
+  font-size: 11px;
+  color: #8a95a5;
+  line-height: 1.4;
+}
+
+.checkbox-text a {
+  color: #00f2fe;
+  text-decoration: none;
+}
+
+.checkbox-text a:hover {
+  text-decoration: underline;
+}
+
+/* Кнопка */
+.btn-register {
+  margin-top: 10px;
+  padding: 15px;
+  background: linear-gradient(180deg, #ffe082 0%, #d4af37 40%, #8a640f 100%);
+  border: 1px solid #fff2aa;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-register span {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.btn-register:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #ebd07b 40%, #aa7c11 100%);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.6), 0 0 10px rgba(212, 175, 55, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Подвал */
+.card-footer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #1e2430;
+}
+
+.card-footer p {
+  font-size: 12px;
+  color: #727d8e;
+}
+
+.link-login {
+  color: #d4af37;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: color 0.2s ease;
+}
+
+.link-login:hover {
+  color: #00f2fe;
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
+}
