@@ -1,0 +1,443 @@
+/* --- Базові налаштування та скидання --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #080c14;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Пусті блоки-заглушки для всіх картинок та логотипів */
+.image-placeholder {
+    background: linear-gradient(135deg, #1c2638, #0f172a);
+    border: 1px dashed #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Верхня панель (Header) --- */
+.main-header {
+    height: 60px;
+    background-color: #0b111e;
+    border-bottom: 1px solid #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Стилі для логотипа */
+.logo-container {
+    display: flex;
+    align-items: center;
+    max-height: 40px;
+}
+
+.logo-container img,
+.logo-img {
+    height: 140px;
+    width: auto;
+    max-width: 130px;
+    object-fit: contain;
+    display: block;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-btn {
+    background: #162032;
+    border: 1px solid #334155;
+    color: #cbd5e1;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+    text-transform: capitalize;
+}
+
+.btn-login {
+    background: linear-gradient(180deg, #e2c073, #8a6d20);
+    color: #000000;
+}
+
+.btn-register {
+    background: linear-gradient(180deg, #38bdf8, #0284c7);
+    color: #ffffff;
+}
+
+/* --- Головний контейнер --- */
+.app-container {
+    display: flex;
+    flex: 1;
+}
+
+/* Ліве бічне меню (Sidebar) */
+.sidebar {
+    width: 60px;
+    background-color: #070a12;
+    border-right: 1px solid #1a2234;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    gap: 12px;
+}
+
+.sidebar-btn {
+    width: 42px;
+    height: 42px;
+    background: #121a29;
+    border: 1px solid #28354e;
+    border-radius: 50%;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.sidebar-btn:hover {
+    border-color: #e2c073;
+    color: #ffffff;
+}
+
+/* Основний контент */
+.main-content {
+    flex: 1;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-x: hidden;
+}
+
+/* --- Центральний банер --- */
+.hero-banner {
+    width: 100%;
+    height: 180px;
+}
+
+.hero-bg-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: 1px solid #2d3b55;
+    background: linear-gradient(135deg, #131c2d 0%, #0d1522 100%);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.badge-500 {
+    font-size: 38px;
+    font-weight: 900;
+    color: #38bdf8;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+}
+
+.hero-toggle-buttons {
+    display: flex;
+    gap: 8px;
+    background: rgba(10, 15, 26, 0.85);
+    padding: 4px;
+    border-radius: 25px;
+    border: 1px solid #c5a059;
+}
+
+.toggle-btn {
+    padding: 8px 32px;
+    border-radius: 20px;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.toggle-btn.active {
+    background: linear-gradient(180deg, #e2c073, #9e7a2f);
+    color: #000000;
+}
+
+/* --- Меню категорій --- */
+.categories-scroll {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.categories-scroll::-webkit-scrollbar {
+    height: 4px;
+}
+
+.categories-scroll::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 2px;
+}
+
+.category-card {
+    min-width: 88px;
+    height: 75px;
+    background: #111827;
+    border: 1px solid #25334c;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    color: #cbd5e1;
+    font-size: 11px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.category-card:hover {
+    border-color: #e2c073;
+}
+
+.icon-box {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    font-size: 14px;
+    border: 1px solid #334155;
+    background: #1a2436;
+}
+
+/* --- Секція ТОП ПОДІЇ СПОРТУ --- */
+.section-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+.title-icon {
+    color: #d4af37;
+    font-style: normal;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: 240px repeat(4, minmax(220px, 1fr));
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* Лівий промо-банер */
+.promo-card {
+    height: 175px;
+}
+
+.promo-bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid #c5a059;
+    padding: 15px;
+    background: linear-gradient(135deg, #182234, #0d1424);
+}
+
+.promo-content {
+    text-align: left;
+    width: 100%;
+}
+
+.promo-content h3 {
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.promo-content h2 {
+    font-size: 16px;
+    color: #e2c073;
+    margin-bottom: 15px;
+    font-style: italic;
+    font-weight: 900;
+}
+
+.btn-gold {
+    background: linear-gradient(180deg, #e2c073, #a17e34);
+    color: #000000;
+    padding: 6px 16px;
+    font-size: 12px;
+}
+
+/* Картки матчів */
+.match-card {
+    background: #0f1624;
+    border: 1px solid #233047;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 175px;
+}
+
+.match-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: #94a3b8;
+    border-bottom: 1px solid #1a2538;
+    padding-bottom: 6px;
+}
+
+.badge {
+    background: #1c283d;
+    border: 1px solid #3b4d6c;
+    padding: 1px 4px;
+    border-radius: 3px;
+    color: #cbd5e1;
+    font-weight: bold;
+}
+
+.league-name {
+    color: #e2c073;
+    font-weight: 600;
+}
+
+.temp {
+    margin-left: auto;
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.sub-info {
+    margin-left: auto;
+    color: #64748b;
+}
+
+.match-teams {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+}
+
+.team-name {
+    font-size: 11px;
+    font-weight: 600;
+    max-width: 65px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ffffff;
+}
+
+.team-logo {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid #3b4d6c;
+    flex-shrink: 0;
+}
+
+.score {
+    font-size: 13px;
+    font-weight: bold;
+    color: #38bdf8;
+    background: #090e18;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #1e293b;
+}
+
+.bet-label {
+    font-size: 9px;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.bet-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.bet-buttons.triple {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.bet-btn {
+    background: #162032;
+    border: 1px solid #2a3a54;
+    border-radius: 6px;
+    padding: 5px 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bet-btn:hover {
+    border-color: #e2c073;
+}
+
+.outcome {
+    font-size: 9px;
+    color: #94a3b8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.coeff {
+    font-size: 11px;
+    font-weight: bold;
+    color: #e2c073;
+}
