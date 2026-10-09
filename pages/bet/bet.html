@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#080c14">
+	<title>Ставки на спорт | CashDash</title>
+	<link rel="stylesheet" href="bet.css">
+	<script src="bet.js" defer></script>
+</head>
+<body>
+	<header class="topbar">
+		<a class="brand" href="../home/home.html" aria-label="CashDash, на головну">
+			<img src="../logo.png" alt="CashDash Casino" class="brand-logo">
+		</a>
+		<label class="search-box">
+			<span aria-hidden="true">⌕</span>
+			<input id="event-search" type="search" placeholder="Швидкий пошук ігор та команд" aria-label="Пошук подій">
+			<kbd>Ctrl K</kbd>
+		</label>
+		<div class="top-actions">
+			<a class="top-link" href="../register/index.html">Увійти</a>
+			<a class="top-cta" href="../register/index.html">Реєстрація</a>
+		</div>
+	</header>
+
+	<div class="page-layout">
+		<nav class="side-rail" aria-label="Головна навігація">
+			<a class="rail-item" href="../home/home.html" title="Головна" aria-label="Головна">⌂</a>
+			<a class="rail-item is-active" href="bet.html" title="Спорт" aria-label="Спорт">⚽</a>
+			<button class="rail-item" type="button" data-toast="Розділ казино скоро з'явиться" title="Казино" aria-label="Казино">♠</button>
+			<button class="rail-item" type="button" data-toast="Підтримка: support@cashdash.example" title="Підтримка" aria-label="Підтримка">?</button>
+		</nav>
+
+		<aside class="league-panel" aria-label="Спортивна навігація">
+			<div class="panel-heading"><span>Спорт</span><span class="live-dot" aria-hidden="true"></span></div>
+			<button class="quick-filter is-selected" type="button" data-filter="all">Усі події <span id="event-count">0</span></button>
+			<button class="quick-filter" type="button" data-filter="live">● Зараз наживо</button>
+			<button class="quick-filter" type="button" data-filter="favorites">☆ Обрані</button>
+			<div class="league-heading">Популярні ліги</div>
+			<div class="league-list">
+				<button class="league-button is-selected" type="button" data-league="all"><span>✦</span> Усі ліги</button>
+				<button class="league-button" type="button" data-league="УПЛ"><span>🇺🇦</span> Україна · УПЛ</button>
+				<button class="league-button" type="button" data-league="Прем'єр-ліга"><span>🏴</span> Англія · Прем'єр-ліга</button>
+				<button class="league-button" type="button" data-league="Ла-Ліга"><span>🇪🇸</span> Іспанія · Ла-Ліга</button>
+				<button class="league-button" type="button" data-league="Бундесліга"><span>🇩🇪</span> Німеччина · Бундесліга</button>
+				<button class="league-button" type="button" data-league="Кіберспорт"><span>⌘</span> Кіберспорт</button>
+			</div>
+			<div class="responsible-note"><span>21+</span><p>Грай відповідально.<br>Ставки мають ризик.</p></div>
+		</aside>
+
+		<main class="main-content">
+			<nav class="sport-tabs" aria-label="Категорії спорту">
+				<button class="sport-tab is-active" type="button" data-sport="all">✦ <span>Головна</span></button>
+				<button class="sport-tab" type="button" data-sport="football">⚽ <span>Футбол</span></button>
+				<button class="sport-tab" type="button" data-sport="esports">⌘ <span>Кіберспорт</span></button>
+				<button class="sport-tab" type="button" data-sport="tennis">🎾 <span>Теніс</span></button>
+			</nav>
+
+			<section class="hero-banner" aria-label="Промо CashDash">
+				<div class="hero-copy">
+					<span class="eyebrow">CASHDASH SPORT</span>
+					<h1>Твоя гра.<br><em>Твій момент.</em></h1>
+					<p>Обирай подію та стеж за грою наживо</p>
+					<a href="#events" class="hero-button">До подій <span aria-hidden="true">→</span></a>
+				</div>
+				<div class="hero-art" aria-hidden="true">
+					<div class="art-ring"></div><div class="art-ball">⚽</div>
+					<span class="art-mark">CD</span>
+				</div>
+				<div class="hero-index">01 <span>/ 03</span></div>
+			</section>
+
+			<section class="builder-strip" aria-label="CashDash BetBuilders">
+				<span class="builder-mark">C</span><strong>BetBuilders</strong><span>Збери власний прогноз</span>
+				<span class="builder-line" aria-hidden="true"></span><span class="builder-odds">+ більше можливостей</span>
+				<button type="button" data-toast="Конструктор прогнозів скоро з'явиться" aria-label="Дізнатися більше">→</button>
+			</section>
+
+			<section class="events-section" id="events">
+				<div class="section-heading">
+					<div><span class="eyebrow">НЕ ПРОПУСТИ</span><h2>Топ події</h2></div>
+					<div class="heading-controls" role="group" aria-label="Фільтр подій">
+						<button class="view-filter is-active" type="button" data-filter="all">Усі</button>
+						<button class="view-filter" type="button" data-filter="live">Наживо <i class="live-dot"></i></button>
+					</div>
+				</div>
+				<div class="event-grid" id="event-grid" aria-live="polite"></div>
+				<div class="empty-results" id="empty-results" hidden>За цими фільтрами подій не знайдено.</div>
+			</section>
+
+			<section class="discover-section" aria-label="Швидкий вибір спорту">
+				<div class="section-heading compact-heading"><div><span class="eyebrow">ОБИРАЙ СВОЄ</span><h2>Види спорту</h2></div></div>
+				<div class="sport-categories">
+					<button type="button" data-sport="football"><span>⚽</span>Футбол</button>
+					<button type="button" data-sport="esports"><span>⌘</span>Кіберспорт</button>
+					<button type="button" data-sport="tennis"><span>🎾</span>Теніс</button>
+					<button type="button" data-toast="Події баскетболу скоро з'являться"><span>🏀</span>Баскетбол</button>
+					<button type="button" data-toast="Події хокею скоро з'являться"><span>🏒</span>Хокей</button>
+				</div>
+			</section>
+			<footer class="page-footer">CashDash · 21+ · Ставки на спорт для повнолітніх</footer>
+		</main>
+
+		<aside class="right-panel" aria-label="Купон ставок">
+			<section class="live-panel">
+				<div class="right-heading"><h2>Наживо</h2><span class="live-label"><i class="live-dot"></i> LIVE</span></div>
+				<div class="live-preview">
+					<div class="preview-orbit"><span>⚽</span></div>
+					<span class="preview-tag">CASHDASH LIVE</span>
+					<strong>Матчі в реальному часі</strong>
+					<span class="preview-caption">Обери подію та стеж за рахунком</span>
+				</div>
+				<button class="live-event" type="button" data-live-shortcut="true">
+					<span class="live-event-icon">◉</span><span><strong>Події наживо</strong><small>Переглянути доступні матчі</small></span><span>→</span>
+				</button>
+			</section>
+
+			<section class="coupon-panel" id="coupon-panel">
+				<div class="coupon-header">
+					<div><h2>Купон</h2><span id="coupon-count">0 виборів</span></div>
+					<button class="clear-coupon" id="clear-coupon" type="button" title="Очистити купон" aria-label="Очистити купон">×</button>
+				</div>
+				<div class="coupon-tabs" role="tablist" aria-label="Тип ставки">
+					<button class="coupon-tab is-active" type="button" role="tab" aria-selected="true" data-mode="single">Ординар</button>
+					<button class="coupon-tab" type="button" role="tab" aria-selected="false" data-mode="multiple">Експрес</button>
+				</div>
+				<div id="coupon-selections" class="coupon-selections"></div>
+				<div id="coupon-empty" class="coupon-empty"><span class="empty-ticket">▤</span><strong>Купон порожній</strong><p>Натисни на коефіцієнт у події, щоб додати вибір</p></div>
+				<div class="coupon-calculation" id="coupon-calculation" hidden>
+					<label for="stake-input">Сума ставки <span>₴</span></label>
+					<div class="stake-input-wrap"><input id="stake-input" type="number" min="1" step="1" inputmode="decimal" placeholder="Введи суму"><span>₴</span></div>
+					<div class="stake-presets" aria-label="Швидкий вибір суми">
+						<button type="button" data-stake="50">50</button><button type="button" data-stake="100">100</button><button type="button" data-stake="250">250</button>
+					</div>
+					<div class="calculation-row"><span>Загальний коефіцієнт</span><strong id="total-odds">1.00</strong></div>
+					<div class="calculation-row potential-row"><span>Можливий виграш</span><strong id="potential-win">0.00 ₴</strong></div>
+					<button class="place-bet" id="place-bet" type="button">Зробити ставку <span>→</span></button>
+					<p class="demo-note">Демо-інтерфейс. Реальні ставки недоступні.</p>
+				</div>
+			</section>
+			<div class="toast" id="toast" role="status" aria-live="polite"></div>
+		</aside>
+	</div>
+</body>
+</html>

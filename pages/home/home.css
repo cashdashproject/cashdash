@@ -87,6 +87,7 @@ body {
 .btn-register {
     background: linear-gradient(180deg, #38bdf8, #0284c7);
     color: #ffffff;
+    text-decoration: none;
 }
 
 /* --- Головний контейнер --- */
@@ -175,6 +176,7 @@ body {
 }
 
 .toggle-btn {
+    display: inline-block;
     padding: 8px 32px;
     border-radius: 20px;
     border: none;
@@ -183,6 +185,7 @@ body {
     font-weight: 700;
     font-size: 13px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .toggle-btn.active {
@@ -300,10 +303,12 @@ body {
 }
 
 .btn-gold {
+    display: inline-block;
     background: linear-gradient(180deg, #e2c073, #a17e34);
     color: #000000;
     padding: 6px 16px;
     font-size: 12px;
+    text-decoration: none;
 }
 
 /* Картки матчів */
