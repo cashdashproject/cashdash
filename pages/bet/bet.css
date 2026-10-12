@@ -67,6 +67,10 @@ a { color: inherit; text-decoration: none; }
 .search-box input::placeholder { color: #748198; }
 .search-box kbd { flex: 0 0 auto; padding: 3px 5px; color: #8492a6; border: 1px solid #39465a; border-radius: 4px; font-size: 10px; }
 .top-actions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; }
+.top-actions .btn { text-decoration: none; text-transform: none; }
+.account-link { display: grid; place-items: center; width: 40px; height: 40px; overflow: hidden; color: #111827; background: #e2c073; border: 2px solid #f2d994; border-radius: 50%; text-decoration: none; }
+.account-avatar-image { width: 100%; height: 100%; object-fit: cover; }
+.account-avatar-initials { font-size: 17px; font-weight: 800; }
 .top-link, .top-cta { display: inline-flex; align-items: center; justify-content: center; padding: 8px 20px; border: 0; border-radius: 20px; font-size: 13px; font-weight: 700; }
 .top-link { color: #000; background: linear-gradient(180deg, #e2c073, #8a6d20); }
 .top-cta { color: #fff; background: linear-gradient(180deg, #38bdf8, #0284c7); }

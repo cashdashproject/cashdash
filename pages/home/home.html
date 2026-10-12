@@ -29,8 +29,7 @@
 
     <div class="header-actions">
         <button class="icon-btn search-btn" aria-label="Пошук">🔍</button>
-        <button class="btn btn-login">Увійти</button>
-        <a class="btn btn-register" href="../register/index.html">Реєстрація</a>
+        <div class="account-actions" data-account-actions></div>
     </div>
 </header>
 
@@ -40,45 +39,42 @@
 
     <div class="app-container">
 
-       
-
         <!-- Ліве бічне меню -->
 
         <aside class="sidebar">
 
-            <button class="sidebar-btn" title="Меню">
+            <button class="sidebar-btn" type="button" title="Меню" aria-label="Розгорнути меню" aria-expanded="false" data-sidebar-action="menu">
 
                 <span class="icon">☰</span>
+                <span class="sidebar-label">Меню</span>
 
             </button>
 
-            <button class="sidebar-btn" title="Налаштування">
+            <button class="sidebar-btn" type="button" title="Налаштування" aria-label="Налаштування" data-sidebar-action="settings">
 
                 <span class="icon">⚙️</span>
+                <span class="sidebar-label">Налаштування</span>
 
             </button>
 
-            <button class="sidebar-btn" title="Трансляції">
+            <button class="sidebar-btn" type="button" title="Трансляції" aria-label="Перейти до спортивних подій" data-sidebar-action="live">
 
                 <span class="icon">((•))</span>
+                <span class="sidebar-label">Трансляції</span>
 
             </button>
 
-            <button class="sidebar-btn" title="Вихід">
-
-                <span class="icon">⏻</span>
-
-            </button>
-
-            <button class="sidebar-btn" title="Бонуси">
+            <button class="sidebar-btn" type="button" title="Бонуси" aria-label="Бонуси" data-sidebar-action="bonuses">
 
                 <span class="icon">🎁</span>
+                <span class="sidebar-label">Бонуси</span>
 
             </button>
 
-            <button class="sidebar-btn" title="Підтримка">
+            <button class="sidebar-btn" type="button" title="Підтримка" aria-label="Підтримка" data-sidebar-action="support">
 
                 <span class="icon">🎧</span>
+                <span class="sidebar-label">Підтримка</span>
 
             </button>
 
@@ -94,26 +90,18 @@
 
             <!-- Центральний банер -->
 
-            <section class="hero-banner">
-
-                <div class="image-placeholder hero-bg-placeholder">
-
+            <section class="hero-banner" aria-labelledby="hero-title">
+                <div class="hero-bg-placeholder">
+                    <img class="hero-art" src="hero-art.svg" alt="" aria-hidden="true">
+                    <div class="hero-shade" aria-hidden="true"></div>
                     <div class="hero-content">
-
-                        <div class="badge-500">500</div>
-
+                        <h1 class="hero-title" id="hero-title">ТЕРИТОРІЯ ГРИ</h1>
                         <div class="hero-toggle-buttons">
-
-                            <a class="toggle-btn active" href="../bet/bet.html">Спорт ⚽</a>
-
-                            <button class="toggle-btn">Казино 🎰</button>
-
+                            <a class="toggle-btn active" href="../bet/bet.html"><span>Спорт</span><span class="toggle-icon" aria-hidden="true">⚽</span></a>
+                            <button class="toggle-btn" type="button"><span>Казино</span><span class="toggle-icon" aria-hidden="true">🎲</span></button>
                         </div>
-
                     </div>
-
                 </div>
-
             </section>
 
 
@@ -540,8 +528,16 @@
 
     </div>
 
+    <dialog class="sidebar-panel" id="sidebar-panel" aria-labelledby="sidebar-panel-title">
+        <div class="sidebar-panel-header">
+            <h2 id="sidebar-panel-title"></h2>
+            <button class="panel-close" id="sidebar-panel-close" type="button" aria-label="Закрити">×</button>
+        </div>
+        <div class="sidebar-panel-content" id="sidebar-panel-content"></div>
+    </dialog>
 
-
+    <script src="../account/account.js"></script>
+    <script src="home.js"></script>
 </body>
 
 </html>

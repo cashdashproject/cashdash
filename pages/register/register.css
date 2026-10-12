@@ -298,3 +298,14 @@ body {
   color: #00f2fe;
   text-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
 }
+
+.auth-status {
+  color: #ffb6a9;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.register-form [hidden],
+.card-header [hidden] {
+  display: none;
+}

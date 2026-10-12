@@ -1,0 +1,384 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    color: #f3f5f7;
+    background: #080c14;
+    font-family: "Montserrat", "Segoe UI", sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.profile-header {
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 10px clamp(18px, 4vw, 56px);
+    background: #0b111e;
+    border-bottom: 1px solid #1e293b;
+}
+
+.profile-brand img {
+    display: block;
+    width: 116px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.profile-header nav {
+    display: flex;
+    gap: 24px;
+    margin-left: auto;
+}
+
+.profile-header nav a {
+    color: #b9c3d1;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.profile-header nav a:hover {
+    color: #e2c073;
+}
+
+.profile-header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.account-link {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    place-items: center;
+    color: #111827;
+    background: #e2c073;
+    border: 2px solid #f2d994;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.account-avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.account-avatar-initials {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.profile-page {
+    width: min(1160px, calc(100% - 40px));
+    margin: 42px auto 72px;
+}
+
+.page-heading,
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.page-heading {
+    margin-bottom: 24px;
+}
+
+.eyebrow {
+    color: #63c8db;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 0;
+    margin-top: 6px;
+    font-size: 30px;
+}
+
+h2 {
+    margin: 6px 0 0;
+    font-size: 19px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.logout-button,
+.text-button {
+    padding: 9px 12px;
+    color: #cbd5e1;
+    background: transparent;
+    border: 1px solid #354258;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-button:hover,
+.text-button:hover {
+    color: #fff;
+    border-color: #e2c073;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid #29364a;
+    border-bottom: 1px solid #29364a;
+}
+
+.stat-item {
+    display: grid;
+    gap: 9px;
+    padding: 18px 22px;
+    border-right: 1px solid #29364a;
+}
+
+.stat-item:first-child {
+    padding-left: 0;
+}
+
+.stat-item:last-child {
+    border-right: 0;
+}
+
+.stat-item span {
+    color: #9aa8bb;
+    font-size: 12px;
+}
+
+.stat-item strong {
+    font-size: 22px;
+}
+
+.profile-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px;
+    margin-top: 34px;
+}
+
+.profile-section {
+    min-width: 0;
+}
+
+.profile-form {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.profile-form label {
+    display: grid;
+    gap: 7px;
+    color: #b9c3d1;
+    font-size: 12px;
+}
+
+.profile-form input:not([type="file"]) {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    color: #f3f5f7;
+    background: #101827;
+    border: 1px solid #344155;
+    border-radius: 4px;
+}
+
+.profile-form input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #63c8db;
+    outline-offset: 2px;
+}
+
+.avatar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 3px;
+}
+
+.avatar-preview {
+    display: grid;
+    width: 68px;
+    height: 68px;
+    overflow: hidden;
+    place-items: center;
+    color: #0b111e;
+    background: #e2c073;
+    border: 2px solid #f2d994;
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-button,
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+    width: fit-content;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 14px;
+    color: #101827;
+    background: #e2c073;
+    border: 1px solid #e2c073;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.profile-form .upload-button {
+    display: inline-flex;
+    color: #101827;
+}
+
+.secondary-button {
+    color: #d9e1ea;
+    background: #172335;
+    border-color: #354258;
+}
+
+.form-status {
+    min-height: 18px;
+    margin: 0;
+    color: #8fd6b0;
+    font-size: 12px;
+}
+
+.password-form {
+    padding-top: 22px;
+    border-top: 1px solid #29364a;
+}
+
+.demo-disclaimer {
+    margin: 18px 0;
+    color: #9aa8bb;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.history-list {
+    border-top: 1px solid #29364a;
+}
+
+.history-empty {
+    padding: 18px 0;
+    color: #9aa8bb;
+    font-size: 13px;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 15px 0;
+    border-bottom: 1px solid #29364a;
+}
+
+.history-item div {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+}
+
+.history-item strong {
+    overflow-wrap: anywhere;
+    font-size: 13px;
+}
+
+.history-item time {
+    color: #9aa8bb;
+    font-size: 11px;
+}
+
+.history-stake {
+    flex: 0 0 auto;
+    color: #e2c073;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+@media (max-width: 720px) {
+    .profile-header {
+        gap: 12px;
+        padding-inline: 16px;
+    }
+
+    .profile-header nav {
+        gap: 12px;
+    }
+
+    .profile-columns {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-brand img {
+        width: 86px;
+    }
+
+    .profile-header nav {
+        gap: 9px;
+    }
+
+    .profile-header nav a {
+        font-size: 11px;
+    }
+
+    .profile-page {
+        width: calc(100% - 32px);
+        margin-top: 28px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .stat-item {
+        padding: 14px 10px;
+    }
+
+    .stat-item span {
+        font-size: 10px;
+    }
+
+    .stat-item strong {
+        font-size: 17px;
+    }
+}

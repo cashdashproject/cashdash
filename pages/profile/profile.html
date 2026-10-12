@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080c14">
+    <title>Профіль | CashDash</title>
+    <link rel="stylesheet" href="profile.css">
+    <script src="../account/account.js" defer></script>
+    <script src="profile.js" defer></script>
+</head>
+<body>
+    <header class="profile-header">
+        <a class="profile-brand" href="../home/home.html"><img src="../logo.png" alt="CashDash"></a>
+        <nav aria-label="Навігація профілю">
+            <a href="../home/home.html">Головна</a>
+            <a href="../bet/bet.html">Спорт</a>
+        </nav>
+        <div class="profile-header-actions" data-account-actions></div>
+    </header>
+
+    <main class="profile-page">
+        <div class="page-heading">
+            <div><span class="eyebrow">ОСОБИСТИЙ КАБІНЕТ</span><h1>Мій профіль</h1></div>
+            <button class="logout-button" type="button" id="logout-button">Вийти</button>
+        </div>
+
+        <section class="stats-grid" aria-label="Статистика">
+            <article class="stat-item"><span>Демо-ставки</span><strong id="stat-bets">0</strong></article>
+            <article class="stat-item"><span>Сума ставок</span><strong id="stat-stake">0 ₴</strong></article>
+            <article class="stat-item"><span>Обране</span><strong id="stat-favorites">0</strong></article>
+        </section>
+
+        <div class="profile-columns">
+            <section class="profile-section">
+                <div class="section-heading"><div><span class="eyebrow">ОБЛІКОВИЙ ЗАПИС</span><h2>Особисті дані</h2></div></div>
+                <form id="profile-form" class="profile-form">
+                    <div class="avatar-row">
+                        <div class="avatar-preview" id="avatar-preview" aria-label="Аватар профілю"></div>
+                        <label class="upload-button" for="avatar-input">Змінити фото</label>
+                        <input id="avatar-input" type="file" accept="image/*" hidden>
+                        <button class="text-button" id="remove-avatar" type="button">Прибрати</button>
+                    </div>
+                    <label>Ім’я користувача<input name="name" type="text" maxlength="40" required></label>
+                    <label>Електронна пошта<input name="email" type="email" required></label>
+                    <label>Телефон<input name="phone" type="tel" maxlength="24" required></label>
+                    <p class="form-status" id="profile-status" role="status"></p>
+                    <button class="primary-button" type="submit">Зберегти зміни</button>
+                </form>
+
+                <form id="password-form" class="profile-form password-form">
+                    <h3>Зміна пароля</h3>
+                    <label>Поточний пароль<input name="currentPassword" type="password" autocomplete="current-password" required></label>
+                    <label>Новий пароль<input name="newPassword" type="password" minlength="8" autocomplete="new-password" required></label>
+                    <p class="form-status" id="password-status" role="status"></p>
+                    <button class="secondary-button" type="submit">Оновити пароль</button>
+                </form>
+            </section>
+
+            <section class="profile-section history-section">
+                <div class="section-heading"><div><span class="eyebrow">АКТИВНІСТЬ</span><h2>Історія демо-ставок</h2></div></div>
+                <p class="demo-disclaimer">Це історія тренувальних дій. Реальні ставки не приймаються.</p>
+                <div class="history-list" id="bet-history"></div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

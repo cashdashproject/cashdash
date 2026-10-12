@@ -187,7 +187,25 @@ document.addEventListener("click", (event) => {
 	}
 
 	if (event.target.closest("#place-bet")) {
-		showToast("Це демо: реальні ставки тут не приймаються.");
+		if (!window.CashDashAccount?.currentUser()) {
+			showToast("Увійдіть, щоб зберегти демо-ставку у статистиці профілю.");
+			return;
+		}
+		const stake = Number(stakeInput.value);
+		const odds = state.selections.reduce((total, selection) => total * selection.odd, 1);
+		const totalOdds = state.mode === "single" ? state.selections.at(-1).odd : odds;
+		window.CashDashAccount.recordDemoBet({
+			stake,
+			potentialWin: stake * totalOdds,
+			selections: state.selections.map(({ eventId, choice, odd }) => {
+				const selectedEvent = events.find((item) => item.id === eventId);
+				return { eventLabel: `${selectedEvent.home} — ${selectedEvent.away}`, choice, odd };
+			})
+		});
+		state.selections = [];
+		renderEvents();
+		renderCoupon();
+		showToast("Демо-ставку збережено у профілі. Реальні ставки недоступні.");
 		return;
 	}
 
