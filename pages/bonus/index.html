@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CashDash Casino - Меню Нагород</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Фонове сяйво та ефекти -->
+  <div class="bg-effects">
+    <div class="glow-cyan"></div>
+    <div class="glow-gold"></div>
+    <div class="bg-pattern"></div>
+  </div>
+
+  <!-- Головний контейнер модального вікна нагород -->
+  <div class="rewards-modal">
+    
+    <!-- Заголовок модалки -->
+    <div class="modal-header">
+      <div class="logo-text">CASHDASH <span class="gold-text">CASINO</span></div>
+      <h2>МЕНЮ НАГОРОД / REWARDS MENU</h2>
+      <p class="modal-subtitle">Щоденні бонуси та досягнення для гравців</p>
+    </div>
+
+    <!-- Секція 1: Щоденний вхід -->
+    <div class="rewards-section">
+      <div class="section-title">
+        <h3>ЩОДЕННИЙ ВХІД (DAILY LOGIN REWARDS)</h3>
+      </div>
+      
+      <div class="daily-grid">
+        
+        <!-- День 1 -->
+        <div class="reward-card claimed">
+          <span class="day-badge">DAY 1</span>
+          <div class="reward-icon">
+            <div class="dashcoin"><span>D</span></div>
+            <span class="reward-amount">x30</span>
+          </div>
+          <div class="reward-status">✓ ОТРИМАНО</div>
+        </div>
+
+        <!-- День 2 -->
+        <div class="reward-card claimed">
+          <span class="day-badge">DAY 2</span>
+          <div class="reward-icon">
+            <div class="dashcoin"><span>D</span></div>
+            <span class="reward-amount">x100</span>
+          </div>
+          <div class="reward-status">✓ ОТРИМАНО</div>
+        </div>
+
+        <!-- День 3 -->
+        <div class="reward-card claimed">
+          <span class="day-badge">DAY 3</span>
+          <div class="reward-icon">
+            <div class="chest-icon">🎁</div>
+            <span class="reward-amount">Скриня</span>
+          </div>
+          <div class="reward-status">✓ ОТРИМАНО</div>
+        </div>
+
+        <!-- День 4 -->
+        <div class="reward-card claimed">
+          <span class="day-badge">DAY 4</span>
+          <div class="reward-icon">
+            <div class="dashcoin"><span>D</span></div>
+            <span class="reward-amount">x200</span>
+          </div>
+          <div class="reward-status">✓ ОТРИМАНО</div>
+        </div>
+
+        <!-- День 5 (Активний) -->
+        <div class="reward-card active">
+          <span class="day-badge">DAY 5</span>
+          <div class="reward-icon">
+            <div class="dashcoin glow"><span>D</span></div>
+            <span class="reward-amount">x500</span>
+          </div>
+          <button class="btn-claim">ЗАБРАТИ</button>
+        </div>
+
+        <!-- День 6 -->
+        <div class="reward-card locked">
+          <span class="day-badge">DAY 6</span>
+          <div class="reward-icon">
+            <div class="dashcoin"><span>D</span></div>
+            <span class="reward-amount">x1000</span>
+          </div>
+          <div class="reward-status">ЗАБРАТИ</div>
+        </div>
+
+        <!-- День 7 -->
+        <div class="reward-card locked ultimate">
+          <span class="day-badge">DAY 7</span>
+          <div class="reward-icon">
+            <div class="chest-icon epic">👑</div>
+            <span class="reward-amount">VIP КЛЮЧ</span>
+          </div>
+          <div class="reward-status">VIP</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Секція 2: Досягнення -->
+    <div class="rewards-section">
+      <div class="section-title">
+        <h3>ДОСЯГНЕННЯ (ACHIEVEMENTS)</h3>
+      </div>
+
+      <div class="achievements-list">
+        
+        <!-- Досягнення 1 -->
+        <div class="achievement-row">
+          <div class="ach-info">
+            <div class="ach-icon-wrapper">👑</div>
+            <div class="ach-text">
+              <h4>ПОЧАТОК ШЛЯХУ</h4>
+              <p>Зробити першу ставку в будь-якому слоті</p>
+            </div>
+          </div>
+          <div class="ach-progress-container">
+            <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+            <span class="progress-text">8/10</span>
+          </div>
+          <div class="ach-reward">
+            <div class="dashcoin small"><span>D</span></div>
+            <span>x50</span>
+          </div>
+          <button class="btn-action">CLAIM</button>
+        </div>
+
+        <!-- Досягнення 2 -->
+        <div class="achievement-row">
+          <div class="ach-info">
+            <div class="ach-icon-wrapper">⚡</div>
+            <div class="ach-text">
+              <h4>ВОЇН СВІТЛА</h4>
+              <p>Виграти 5 бонусних раундів поспіль</p>
+            </div>
+          </div>
+          <div class="ach-progress-container">
+            <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+            <span class="progress-text">5/5</span>
+          </div>
+          <div class="ach-reward">
+            <div class="dashcoin small"><span>D</span></div>
+            <span>x300</span>
+          </div>
+          <button class="btn-action claimed-btn" disabled>✓ ГОТОВО</button>
+        </div>
+
+        <!-- Досягнення 3 -->
+        <div class="achievement-row">
+          <div class="ach-info">
+            <div class="ach-icon-wrapper">💎</div>
+            <div class="ach-text">
+              <h4>ДОСЛІДНИК ВІП</h4>
+              <p>Відвідати всі ігрові зали казино</p>
+            </div>
+          </div>
+          <div class="ach-progress-container">
+            <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
+            <span class="progress-text">4/10</span>
+          </div>
+          <div class="ach-reward">
+            <div class="dashcoin small"><span>D</span></div>
+            <span>x150</span>
+          </div>
+          <button class="btn-action">CLAIM</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
