@@ -1,0 +1,399 @@
+/* =========================================================
+   CASHDASH CASINO - REWARDS MENU STYLES
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #080a0f;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+  padding: 20px;
+}
+
+/* --- Ефекти фону --- */
+.bg-effects {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bg-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 50% 50%, transparent 10%, #080a0f 90%),
+    linear-gradient(45deg, rgba(212, 175, 55, 0.015) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(212, 175, 55, 0.015) 25%, transparent 25%);
+  background-size: 100% 100%, 60px 60px, 60px 60px;
+}
+
+.glow-cyan {
+  position: absolute;
+  top: 10%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(60px);
+}
+
+.glow-gold {
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
+  transform: translate(-50%, 50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(70px);
+}
+
+/* --- Модальне вікно --- */
+.rewards-modal {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 960px;
+  background: linear-gradient(145deg, #131720 0%, #0a0c10 100%);
+  border: 2px solid;
+  border-image: linear-gradient(180deg, #f1ca6f 0%, #794a08 50%, #00f2fe 100%) 1;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 242, 254, 0.1);
+  padding: 35px 30px;
+}
+
+/* --- Шапка --- */
+.modal-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 20px;
+}
+
+.logo-text {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.gold-text {
+  color: #d4af37;
+}
+
+.modal-header h2 {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: linear-gradient(180deg, #ffffff 0%, #c5d1e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 5px;
+}
+
+.modal-subtitle {
+  font-size: 12px;
+  color: #727d8e;
+  letter-spacing: 1px;
+}
+
+/* --- Загальні секції --- */
+.rewards-section {
+  margin-bottom: 35px;
+}
+
+.section-title h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #d4af37;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* --- Щоденний вхід (Сітка) --- */
+.daily-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+}
+
+.reward-card {
+  background: #0d1017;
+  border: 1px solid #222938;
+  border-radius: 4px;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 140px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.day-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #727d8e;
+  letter-spacing: 1px;
+}
+
+.reward-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.reward-amount {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Стиль дешкоїна (Монета з літерою D) */
+.dashcoin {
+  width: 38px;
+  height: 38px;
+  background: radial-gradient(circle, #ffe082 0%, #d4af37 60%, #8a640f 100%);
+  border: 2px solid #fff2aa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.dashcoin span {
+  font-size: 18px;
+  font-weight: 900;
+  color: #0b0d12;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.dashcoin.small {
+  width: 26px;
+  height: 26px;
+}
+
+.dashcoin.small span {
+  font-size: 12px;
+}
+
+.dashcoin.glow {
+  box-shadow: 0 0 15px #00f2fe, 0 0 10px #d4af37;
+  animation: pulse-glow 2s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.4); }
+  100% { box-shadow: 0 0 20px rgba(0, 242, 254, 0.8), 0 0 10px rgba(212, 175, 55, 0.8); }
+}
+
+.chest-icon {
+  font-size: 24px;
+}
+
+/* Стани карток днів */
+.reward-card.claimed {
+  opacity: 0.6;
+  border-color: #1a202c;
+  background: #090b0e;
+}
+
+.reward-status {
+  font-size: 9px;
+  font-weight: 700;
+  color: #4a5366;
+}
+
+.reward-card.claimed .reward-status {
+  color: #2ecc71;
+}
+
+.reward-card.active {
+  border-color: #00f2fe;
+  background: linear-gradient(180deg, #161f30 0%, #0d1017 100%);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+  transform: translateY(-3px);
+}
+
+.reward-card.active .day-badge {
+  color: #00f2fe;
+}
+
+.btn-claim {
+  width: 100%;
+  padding: 6px 0;
+  background: linear-gradient(180deg, #00f2fe 0%, #00767c 100%);
+  border: none;
+  font-size: 10px;
+  font-weight: 900;
+  color: #000000;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+  transition: all 0.2s ease;
+}
+
+.btn-claim:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #00f2fe 100%);
+}
+
+.reward-card.locked {
+  opacity: 0.7;
+}
+
+/* --- Досягнення (Список) --- */
+.achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.achievement-row {
+  background: #0d1017;
+  border: 1px solid #222938;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 4px;
+}
+
+.ach-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 280px;
+}
+
+.ach-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  background: #161a23;
+  border: 1px solid #d4af37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+.ach-text h4 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.ach-text p {
+  font-size: 11px;
+  color: #727d8e;
+}
+
+.ach-progress-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 250px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #080a0f;
+  border: 1px solid #222938;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #d4af37 0%, #ffe082 100%);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+.progress-text {
+  font-size: 10px;
+  font-weight: 700;
+  color: #727d8e;
+  text-align: right;
+}
+
+.ach-reward {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 70px;
+}
+
+.ach-reward span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #d4af37;
+}
+
+.btn-action {
+  padding: 8px 18px;
+  background: linear-gradient(180deg, #ffe082 0%, #d4af37 40%, #8a640f 100%);
+  border: 1px solid #fff2aa;
+  font-size: 11px;
+  font-weight: 900;
+  color: #000000;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+  min-width: 95px;
+}
+
+.btn-action:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #ebd07b 100%);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+}
+
+.btn-action.claimed-btn {
+  background: #161a23;
+  border: 1px solid #222938;
+  color: #2ecc71;
+  cursor: default;
+  box-shadow: none;
+}
+
+/* --- Адаптивність для менших екранів --- */
+@media (max-width: 768px) {
+  .daily-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .achievement-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .ach-progress-container {
+    max-width: 100%;
+    width: 100%;
+  }
+}
