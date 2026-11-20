@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Казино | CashDash</title>
+    <link rel="stylesheet" href="casino.css">
+    <script src="../account/account.js" defer></script>
+    <script src="casino.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="../home/home.html" aria-label="CashDash, головна">
+            <img src="../logo.png" alt="CashDash">
+        </a>
+        <nav class="main-nav" aria-label="Головна навігація">
+            <a href="../home/home.html">Головна</a>
+            <a class="is-current" href="casino.html" aria-current="page">Казино</a>
+        </nav>
+        <div class="account-actions" data-account-actions></div>
+    </header>
+
+    <main class="casino-main">
+        <section class="catalog" aria-labelledby="catalog-title">
+            <div class="section-heading">
+                <p class="eyebrow">CASHDASH ARCADE</p>
+                <h1 id="catalog-title">Ігри казино</h1>
+                <p class="section-copy">Обирай гру та випробовуй удачу.</p>
+            </div>
+
+            <div class="game-list">
+                <article class="game-card game-card-featured">
+                    <div class="game-art cashdash-art" aria-hidden="true">
+                        <span class="art-spark spark-one">✦</span>
+                        <span class="art-coin">C</span>
+                        <span class="art-spark spark-two">✦</span>
+                        <span class="art-track track-one"></span>
+                        <span class="art-track track-two"></span>
+                        <span class="art-track track-three"></span>
+                        <span class="art-track track-four"></span>
+                    </div>
+                    <div class="game-card-info">
+                        <div class="game-card-title">
+                            <div>
+                                <span class="game-index">ГРА 01</span>
+                                <h2>CashDash</h2>
+                            </div>
+                            <span class="game-symbol" aria-hidden="true">↗</span>
+                        </div>
+                        <p>Чотири доріжки. Одна бомба. Зроби крок і перевір, як далеко зайдеш.</p>
+                        <a class="play-link" href="#cashdash-game">Грати <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+
+                <article class="game-card game-card-soon">
+                    <div class="game-art dice-art" aria-hidden="true"><span>⚄</span><span>⚂</span></div>
+                    <div class="game-card-info">
+                        <div class="game-card-title"><div><span class="game-index">ГРА 02</span><h2>Кості</h2></div></div>
+                        <p>Кидай кості та чекай на результат.</p>
+                        <span class="coming-soon">Скоро</span>
+                    </div>
+                </article>
+
+                <article class="game-card game-card-featured">
+                    <div class="game-art slots-art" aria-hidden="true"><span>7</span><span>★</span><span>7</span></div>
+                    <div class="game-card-info">
+                        <div class="game-card-title"><div><span class="game-index">ГРА 03</span><h2>Слоти</h2></div></div>
+                        <p>Три барабани та яскраві комбінації.</p>
+                        <a class="play-link" href="#slots-game">Грати <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="cashdash-game" id="cashdash-game" aria-labelledby="game-title">
+            <div class="game-heading">
+                <div>
+                    <a class="back-link" href="#catalog-title">← Усі ігри</a>
+                    <p class="eyebrow">ГРА 01 · CASHDASH</p>
+                    <h2 id="game-title">Обери свою доріжку</h2>
+                    <p class="game-instructions">На кожному рівні одна з чотирьох доріжок має бомбу. Вгадай безпечну, щоб пройти далі.</p>
+                </div>
+                <div class="risk-display" aria-label="Шанс бомби: один з чотирьох">
+                    <span class="risk-label">РИЗИК НА КРОК</span>
+                    <strong>1 <span>/</span> 4</strong>
+                </div>
+            </div>
+
+            <div class="game-console">
+                <div class="game-status-row">
+                    <p id="game-status" class="game-status" aria-live="polite">Натисни «Почати», щоб увійти на доріжки.</p>
+                    <p class="level-counter">РІВЕНЬ <strong id="level-counter">0 / 8</strong></p>
+                </div>
+                <div class="lane-headings" aria-hidden="true">
+                    <span>ДОРІЖКА 01</span><span>ДОРІЖКА 02</span><span>ДОРІЖКА 03</span><span>ДОРІЖКА 04</span>
+                </div>
+                <div class="lane-board" id="lane-board" aria-label="Ігрове поле з чотирма доріжками"></div>
+                <div class="game-controls">
+                    <p class="game-disclaimer">Демо-гра без грошових ставок.</p>
+                    <button class="start-button" id="start-game" type="button">Почати</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="slots-game" id="slots-game" aria-labelledby="slots-title">
+            <div class="game-heading">
+                <div>
+                    <a class="back-link" href="#catalog-title">← Усі ігри</a>
+                    <p class="eyebrow">ГРА 03 · ARCADE SLOTS</p>
+                    <h2 id="slots-title">Золоті барабани</h2>
+                    <p class="game-instructions">Збирай однакові символи на лініях і дивись, які комбінації випали.</p>
+                </div>
+            </div>
+
+            <div class="slot-machine-layout">
+                <div class="game-console slot-console">
+                    <div class="jackpot-celebration" id="jackpot-celebration" aria-hidden="true">
+                        <div class="jackpot-stars">
+                            <span>★</span><span>✦</span><span>★</span><span>✧</span>
+                            <span>✦</span><span>★</span><span>✧</span><span>★</span>
+                            <span>✦</span><span>★</span><span>✧</span><span>✦</span>
+                        </div>
+                        <strong>JACKPOT!</strong>
+                    </div>
+                    <div class="slot-machine-header">
+                        <div class="slot-counter"><span aria-hidden="true">◈</span><strong id="slot-credits">500</strong><small>ДЕМО-КРЕДИТИ</small></div>
+                    </div>
+
+                    <div class="slot-cabinet">
+                        <div class="slot-display" id="slot-reels" aria-label="Ігрове поле: п'ять колонок і три ряди"></div>
+                    </div>
+                    <p class="slot-result" id="slot-result" aria-live="polite">Натисни «Крутити», щоб почати.</p>
+                    <div class="slot-controls">
+                        <div class="bet-control" aria-label="Розмір ставки">
+                            <span class="bet-label">СТАВКА</span>
+                            <button class="bet-step" id="bet-down" type="button" aria-label="Зменшити ставку">−</button>
+                            <strong id="slot-bet">10</strong>
+                            <button class="bet-step" id="bet-up" type="button" aria-label="Збільшити ставку">+</button>
+                        </div>
+                        <div class="slot-actions">
+                            <button class="reset-button" id="reset-slots" type="button">Нова гра</button>
+                            <button class="start-button" id="spin-slots" type="button">Крутити</button>
+                        </div>
+                    </div>
+                    <p class="game-disclaimer">Демо-гра без грошових ставок. Виграші додаються лише до демо-кредитів.</p>
+                </div>
+
+                <aside class="slot-rulebook" aria-label="Таблиці символів і комбінацій">
+                    <section class="rule-panel" aria-labelledby="symbol-table-title">
+                        <h3 id="symbol-table-title">СИМВОЛИ</h3>
+                        <div class="rule-table rule-table-head"><span></span><span>ЦІНА</span><span>ШАНС</span></div>
+                        <div class="rule-table"><span>🍋 Лимон</span><strong>2</strong><span>22.8%</span></div>
+                        <div class="rule-table"><span>🍒 Вишні</span><strong>2</strong><span>22.8%</span></div>
+                        <div class="rule-table"><span>🍀 Конюшина</span><strong>3</strong><span>17.5%</span></div>
+                        <div class="rule-table"><span>💎 Діамант</span><strong>5</strong><span>14.0%</span></div>
+                        <div class="rule-table"><span><span class="rule-chest" aria-hidden="true"></span> Скриня</span><strong>5</strong><span>14.0%</span></div>
+                        <div class="rule-table"><span><span class="rule-seven">7</span> Сімка</span><strong>7</strong><span>8.8%</span></div>
+                        <p class="rule-footnote">Ціна символу × ставка × множник комбінації</p>
+                    </section>
+
+                    <section class="rule-panel" aria-labelledby="combo-table-title">
+                        <h3 id="combo-table-title">МНОЖНИКИ КОМБІНАЦІЙ</h3>
+                        <div class="combo-table"><span>Горизонталь, 3</span><strong>×1</strong></div>
+                        <div class="combo-table"><span>Вертикаль, 3</span><strong>×1</strong></div>
+                        <div class="combo-table"><span>Діагональ, 3</span><strong>×1</strong></div>
+                        <div class="combo-table"><span>Горизонталь, 4</span><strong>×2</strong></div>
+                        <div class="combo-table"><span>Горизонталь, 5</span><strong>×3</strong></div>
+                        <div class="combo-table"><span>Діагональ, 4</span><strong>×4</strong></div>
+                        <div class="combo-table"><span>Верхній / нижній ряд</span><strong>×7</strong></div>
+                        <div class="combo-table"><span>Середній ряд</span><strong>×8</strong></div>
+                        <div class="combo-table"><span>Усе поле, 15</span><strong>×10</strong></div>
+                    </section>
+                </aside>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
