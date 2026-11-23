@@ -1,1 +1,19 @@
---create base script
+
+-- Таблиця ставок (Bets)
+CREATE TABLE Bets (
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    PlayerId INT NOT NULL,
+    Value DECIMAL(15, 2) NOT NULL,
+    MatchesId INT NOT NULL,
+    FOREIGN KEY (PlayerId) REFERENCES Players(Id) ON DELETE CASCADE,
+    FOREIGN KEY (MatchesId) REFERENCES Matches(Id) ON DELETE CASCADE
+);
+
+-- Таблиця бонусів (Bonuses)
+CREATE TABLE Bonuses (
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    PlayerId INT NOT NULL,
+    Value DECIMAL(15, 2) NOT NULL,
+    Is_taken BOOLEAN NOT NULL DEFAULT FALSE,
+    FOREIGN KEY (PlayerId) REFERENCES Players(Id) ON DELETE CASCADE
+);
