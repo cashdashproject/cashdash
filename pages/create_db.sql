@@ -38,6 +38,14 @@ create table SportMatches
     MultDraw float null default 1
 );
 
+create table Games
+(
+    Id int primary key identity(1,1),
+    [Type] nvarchar(100) not null,
+    Score int not null default 0,
+    Duration int not null
+);
+
 create table GameSessions
 (
     Id int primary key identity(1,1),
@@ -47,7 +55,7 @@ create table GameSessions
     IsClosed bit not null default 0,
     Prize money null,
     multiplayer bit not null default 0,
-    game_id int not null
+    game_id int not null references Games(Id)
 );
 
 create table AccountStatuses
