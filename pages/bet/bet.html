@@ -26,11 +26,12 @@
 
 	<div class="page-layout">
 		<nav class="side-rail cashdash-sidebar" aria-label="Головна навігація">
-			<button class="rail-item" type="button" data-nav-action="menu" aria-expanded="false" title="Меню" aria-label="Меню"><span>☰</span><span class="nav-item-label">Меню</span></button>
-			<a class="rail-item" href="../home/home.html" title="Головна" aria-label="Головна"><span>⌂</span><span class="nav-item-label">Головна</span></a>
-			<a class="rail-item is-active" href="bet.html" title="Спорт" aria-label="Спорт"><span>⚽</span><span class="nav-item-label">Спорт</span></a>
-			<button class="rail-item" type="button" data-toast="Розділ казино скоро з'явиться" title="Казино" aria-label="Казино"><span>♠</span><span class="nav-item-label">Казино</span></button>
-			<button class="rail-item" type="button" data-toast="Підтримка: support@cashdash.example" title="Підтримка" aria-label="Підтримка"><span>?</span><span class="nav-item-label">Підтримка</span></button>
+			<button class="rail-item" type="button" data-nav-action="menu" aria-expanded="false" title="Меню" aria-label="Розгорнути меню"><span class="icon">☰</span><span class="nav-item-label">Меню</span></button>
+			<a class="rail-item" href="../home/home.html" title="Головна сторінка" aria-label="Перейти на головну сторінку"><span class="icon">⌂</span><span class="nav-item-label">Головна сторінка</span></a>
+			<button class="rail-item" type="button" data-nav-action="settings" title="Налаштування" aria-label="Налаштування"><span class="icon">⚙️</span><span class="nav-item-label">Налаштування</span></button>
+			<button class="rail-item" type="button" data-nav-action="live" title="Трансляції" aria-label="Перейти до спортивних подій"><span class="icon">((•))</span><span class="nav-item-label">Трансляції</span></button>
+			<button class="rail-item" type="button" data-nav-action="bonuses" title="Бонуси" aria-label="Бонуси"><span class="icon">🎁</span><span class="nav-item-label">Бонуси</span></button>
+			<button class="rail-item" type="button" data-nav-action="support" title="Підтримка" aria-label="Підтримка"><span class="icon">🎧</span><span class="nav-item-label">Підтримка</span></button>
 		</nav>
 
 		<aside class="league-panel" aria-label="Спортивна навігація">
@@ -143,5 +144,13 @@
 			<div class="toast" id="toast" role="status" aria-live="polite"></div>
 		</aside>
 	</div>
+
+	<dialog class="sidebar-panel" id="sidebar-panel" aria-labelledby="sidebar-panel-title">
+		<div class="sidebar-panel-header">
+			<h2 id="sidebar-panel-title"></h2>
+			<button class="panel-close" id="sidebar-panel-close" type="button" aria-label="Закрити">×</button>
+		</div>
+		<div class="sidebar-panel-content" id="sidebar-panel-content"></div>
+	</dialog>
 </body>
 </html>

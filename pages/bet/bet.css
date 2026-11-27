@@ -113,15 +113,34 @@ a { color: inherit; text-decoration: none; }
 	place-items: center;
 	width: 42px;
 	height: 42px;
+	min-width: 42px;
+	min-height: 42px;
 	padding: 0;
-	color: #aab5c5;
-	background: transparent;
-	border: 0;
-	border-radius: 12px;
+	color: #94a3b8;
+	background: #121a29;
+	border: 1px solid #28354e;
+	border-radius: 50%;
 	cursor: pointer;
-	font-size: 19px;
+	font-size: 16px;
+	text-decoration: none;
+	transition: all 0.2s ease;
 }
-.rail-item:hover, .rail-item.is-active { color: var(--gold); background: #1a2331; }
+.rail-item:hover,
+.rail-item.is-active {
+	border-color: #e2c073;
+	color: #ffffff;
+	background: #1a2331;
+}
+
+.side-rail.cashdash-sidebar.expanded .rail-item {
+	width: 100%;
+	min-width: 0;
+	height: 42px;
+	border-radius: 8px;
+	justify-content: flex-start;
+	gap: 12px;
+	padding-inline: 12px;
+}
 
 .league-panel, .right-panel { position: sticky; top: 88px; }
 .league-panel { padding: 15px 12px; background: var(--surface); border: 1px solid #202b3a; border-radius: var(--radius); }
@@ -355,3 +374,64 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
 	*, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+.sidebar-panel {
+	width: min(440px, calc(100% - 32px));
+	max-height: min(80vh, 560px);
+	padding: 20px;
+	color: #fff;
+	background: #101827;
+	border: 1px solid #334155;
+	border-radius: 12px;
+}
+
+.sidebar-panel::backdrop { background: rgba(0, 0, 0, 0.68); }
+
+.sidebar-panel-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #28354e;
+}
+
+.sidebar-panel-header h2 { margin: 0; }
+
+.panel-close {
+	width: 34px;
+	height: 34px;
+	color: #cbd5e1;
+	background: #1a2638;
+	border: 1px solid #334155;
+	border-radius: 7px;
+	cursor: pointer;
+}
+
+.sidebar-panel-content { padding-top: 16px; color: #cbd5e1; line-height: 1.55; }
+.sidebar-panel-content a { color: #38bdf8; }
+
+.setting-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 10px;
+	padding: 10px 12px;
+	background: #151f30;
+	border: 1px solid #28354e;
+	border-radius: 8px;
+}
+
+.bonus-offer {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 12px;
+	background: #151f30;
+	border: 1px solid #28354e;
+	border-radius: 8px;
+}
+
+.bonus-offer h3 { margin: 0 0 4px; color: #e2c073; }
+.bonus-offer p { margin: 0; }
