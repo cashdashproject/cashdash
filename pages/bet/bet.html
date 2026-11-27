@@ -6,13 +6,15 @@
 	<meta name="theme-color" content="#080c14">
 	<title>Ставки на спорт | CashDash</title>
 	<link rel="stylesheet" href="bet.css">
+	<link rel="stylesheet" href="../shared-navigation.css">
 	<script src="../account/account.js" defer></script>
 	<script src="bet.js" defer></script>
+	<script src="../shared-navigation.js" defer></script>
 </head>
 <body>
 	<header class="topbar">
 		<a class="brand" href="../home/home.html" aria-label="CashDash, на головну">
-			<img src="../logo.png" alt="CashDash Casino" class="brand-logo">
+			<img src="../logo2.png" alt="CashDash Casino" class="brand-logo">
 		</a>
 		<label class="search-box">
 			<span aria-hidden="true">⌕</span>
@@ -23,11 +25,13 @@
 	</header>
 
 	<div class="page-layout">
-		<nav class="side-rail" aria-label="Головна навігація">
-			<a class="rail-item" href="../home/home.html" title="Головна" aria-label="Головна">⌂</a>
-			<a class="rail-item is-active" href="bet.html" title="Спорт" aria-label="Спорт">⚽</a>
-			<button class="rail-item" type="button" data-toast="Розділ казино скоро з'явиться" title="Казино" aria-label="Казино">♠</button>
-			<button class="rail-item" type="button" data-toast="Підтримка: support@cashdash.example" title="Підтримка" aria-label="Підтримка">?</button>
+		<nav class="side-rail cashdash-sidebar" aria-label="Головна навігація">
+			<button class="rail-item" type="button" data-nav-action="menu" aria-expanded="false" title="Меню" aria-label="Розгорнути меню"><span class="icon">☰</span><span class="nav-item-label">Меню</span></button>
+			<a class="rail-item" href="../home/home.html" title="Головна сторінка" aria-label="Перейти на головну сторінку"><span class="icon">⌂</span><span class="nav-item-label">Головна сторінка</span></a>
+			<button class="rail-item" type="button" data-nav-action="settings" title="Налаштування" aria-label="Налаштування"><span class="icon">⚙️</span><span class="nav-item-label">Налаштування</span></button>
+			<button class="rail-item" type="button" data-nav-action="live" title="Трансляції" aria-label="Перейти до спортивних подій"><span class="icon">((•))</span><span class="nav-item-label">Трансляції</span></button>
+			<button class="rail-item" type="button" data-nav-action="bonuses" title="Бонуси" aria-label="Бонуси"><span class="icon">🎁</span><span class="nav-item-label">Бонуси</span></button>
+			<button class="rail-item" type="button" data-nav-action="support" title="Підтримка" aria-label="Підтримка"><span class="icon">🎧</span><span class="nav-item-label">Підтримка</span></button>
 		</nav>
 
 		<aside class="league-panel" aria-label="Спортивна навігація">
@@ -140,5 +144,13 @@
 			<div class="toast" id="toast" role="status" aria-live="polite"></div>
 		</aside>
 	</div>
+
+	<dialog class="sidebar-panel" id="sidebar-panel" aria-labelledby="sidebar-panel-title">
+		<div class="sidebar-panel-header">
+			<h2 id="sidebar-panel-title"></h2>
+			<button class="panel-close" id="sidebar-panel-close" type="button" aria-label="Закрити">×</button>
+		</div>
+		<div class="sidebar-panel-content" id="sidebar-panel-content"></div>
+	</dialog>
 </body>
 </html>

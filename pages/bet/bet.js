@@ -234,5 +234,46 @@ document.addEventListener("keydown", (event) => {
 });
 
 stakeInput.addEventListener("input", updateCalculation);
+
+const betPanel = document.querySelector("#sidebar-panel");
+const betPanelTitle = document.querySelector("#sidebar-panel-title");
+const betPanelContent = document.querySelector("#sidebar-panel-content");
+const betPanelClose = document.querySelector("#sidebar-panel-close");
+
+const betPanelViews = {
+	bonuses: { title: "Бонуси", content: '<div class="bonus-offer"><span>🎁</span><div><h3>Стартовий бонус</h3><p>Зареєструйте акаунт, щоб переглянути доступні пропозиції.</p></div></div>' },
+	support: { title: "Підтримка", content: '<p>Потрібна допомога? Перевірте, чи є відповідь на ваше питання:</p><p>Email: <a href="mailto:support@cashdash.example">support@cashdash.example</a></p>' },
+	settings: { title: "Налаштування", content: '<label class="setting-row"><span>Звукові ефекти</span><input type="checkbox" data-setting="sound"></label><label class="setting-row"><span>Сповіщення</span><input type="checkbox" data-setting="notifications"></label>' }
+};
+
+document.querySelectorAll("[data-nav-action]").forEach((button) => {
+	button.addEventListener("click", () => {
+		const action = button.dataset.navAction;
+		if (action === "menu") {
+			return;
+		}
+		if (action === "live") {
+			state.filter = "live";
+			document.querySelectorAll(".quick-filter, .view-filter").forEach((item) => item.classList.toggle("is-active", item.dataset.filter === "live"));
+			renderEvents();
+			document.querySelector("#events")?.scrollIntoView({ behavior: "smooth", block: "start" });
+			return;
+		}
+		const view = betPanelViews[action];
+		if (!view || !betPanel) return;
+		betPanelTitle.textContent = view.title;
+		betPanelContent.innerHTML = view.content;
+		betPanel.showModal();
+		betPanel.querySelectorAll("[data-setting]").forEach((control) => {
+			const key = `cashdash-${control.dataset.setting}`;
+			control.checked = localStorage.getItem(key) === "true";
+			control.addEventListener("change", () => localStorage.setItem(key, String(control.checked)));
+		});
+	});
+});
+
+betPanelClose?.addEventListener("click", () => betPanel.close());
+betPanel?.addEventListener("click", (event) => { if (event.target === betPanel) betPanel.close(); });
+
 renderEvents();
 renderCoupon();
