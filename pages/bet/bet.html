@@ -6,13 +6,15 @@
 	<meta name="theme-color" content="#080c14">
 	<title>Ставки на спорт | CashDash</title>
 	<link rel="stylesheet" href="bet.css">
+	<link rel="stylesheet" href="../shared-navigation.css">
 	<script src="../account/account.js" defer></script>
 	<script src="bet.js" defer></script>
+	<script src="../shared-navigation.js" defer></script>
 </head>
 <body>
 	<header class="topbar">
 		<a class="brand" href="../home/home.html" aria-label="CashDash, на головну">
-			<img src="../logo.png" alt="CashDash Casino" class="brand-logo">
+			<img src="../logo2.png" alt="CashDash Casino" class="brand-logo">
 		</a>
 		<label class="search-box">
 			<span aria-hidden="true">⌕</span>
@@ -23,11 +25,12 @@
 	</header>
 
 	<div class="page-layout">
-		<nav class="side-rail" aria-label="Головна навігація">
-			<a class="rail-item" href="../home/home.html" title="Головна" aria-label="Головна">⌂</a>
-			<a class="rail-item is-active" href="bet.html" title="Спорт" aria-label="Спорт">⚽</a>
-			<button class="rail-item" type="button" data-toast="Розділ казино скоро з'явиться" title="Казино" aria-label="Казино">♠</button>
-			<button class="rail-item" type="button" data-toast="Підтримка: support@cashdash.example" title="Підтримка" aria-label="Підтримка">?</button>
+		<nav class="side-rail cashdash-sidebar" aria-label="Головна навігація">
+			<button class="rail-item" type="button" data-nav-action="menu" aria-expanded="false" title="Меню" aria-label="Меню"><span>☰</span><span class="nav-item-label">Меню</span></button>
+			<a class="rail-item" href="../home/home.html" title="Головна" aria-label="Головна"><span>⌂</span><span class="nav-item-label">Головна</span></a>
+			<a class="rail-item is-active" href="bet.html" title="Спорт" aria-label="Спорт"><span>⚽</span><span class="nav-item-label">Спорт</span></a>
+			<button class="rail-item" type="button" data-toast="Розділ казино скоро з'явиться" title="Казино" aria-label="Казино"><span>♠</span><span class="nav-item-label">Казино</span></button>
+			<button class="rail-item" type="button" data-toast="Підтримка: support@cashdash.example" title="Підтримка" aria-label="Підтримка"><span>?</span><span class="nav-item-label">Підтримка</span></button>
 		</nav>
 
 		<aside class="league-panel" aria-label="Спортивна навігація">

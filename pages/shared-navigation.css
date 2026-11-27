@@ -1,0 +1,220 @@
+:root { --cd-sidebar-width: 60px; }
+
+.cashdash-sidebar {
+  transition: width 0.22s ease, min-width 0.22s ease;
+}
+
+.cashdash-sidebar.expanded {
+  width: 184px !important;
+  min-width: 184px !important;
+  align-items: stretch !important;
+}
+
+.cashdash-sidebar .nav-item-label,
+.cashdash-sidebar .sidebar-label {
+  display: none;
+}
+
+.cashdash-sidebar.expanded .nav-item-label,
+.cashdash-sidebar.expanded .sidebar-label {
+  display: inline;
+}
+
+.cashdash-sidebar.expanded .rail-item,
+.cashdash-sidebar.expanded .sidebar-btn,
+.cashdash-sidebar-fixed.expanded .nav-item {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  justify-content: flex-start;
+  gap: 12px;
+  padding-inline: 12px;
+}
+
+.cashdash-sidebar .rail-item,
+.cashdash-sidebar .sidebar-btn {
+  white-space: nowrap;
+}
+
+.cashdash-sidebar-fixed {
+  position: fixed;
+  z-index: 25;
+  left: 12px;
+  top: 80px;
+  width: 60px;
+  min-height: 244px;
+  height: 244px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 7px;
+  background: #0c111a;
+  border: 1px solid #1b2636;
+  border-radius: 15px;
+}
+
+.cashdash-sidebar-fixed.expanded {
+  width: 184px;
+  min-width: 184px;
+  align-items: stretch;
+  padding-inline: 10px;
+  height: 244px;
+}
+
+.cashdash-sidebar-fixed .nav-item {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  color: #aab5c5;
+  background: transparent;
+  border: 0;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.cashdash-sidebar-fixed .nav-item:hover,
+.cashdash-sidebar-fixed .nav-item.is-active {
+  color: #e2c073;
+  background: #1a2331;
+}
+
+.cashdash-sidebar-fixed.expanded .nav-item {
+  width: 100%;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 0 12px;
+}
+
+.cashdash-sidebar-fixed .nav-item-label {
+  display: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cashdash-sidebar-fixed.expanded .nav-item-label {
+  display: inline;
+}
+
+.cashdash-nav-dialog {
+  width: min(420px, calc(100% - 32px));
+  margin: auto;
+  padding: 20px;
+  color: #fff;
+  background: #101827;
+  border: 1px solid #334155;
+  border-radius: 12px;
+}
+
+.cashdash-nav-dialog::backdrop { background: rgba(0, 0, 0, 0.68); }
+
+.cashdash-nav-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #28354e;
+}
+
+.cashdash-nav-dialog-header button {
+  width: 34px;
+  height: 34px;
+  color: #cbd5e1;
+  background: #1a2638;
+  border: 1px solid #334155;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.cashdash-nav-dialog-content { padding-top: 16px; color: #cbd5e1; line-height: 1.55; }
+.cashdash-nav-dialog-content a { color: #38bdf8; }
+
+.profile-page,
+.profile-header + main {
+  padding-left: 70px;
+}
+
+@media (max-width: 760px) {
+  .cashdash-sidebar-fixed {
+    top: auto;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    width: auto;
+    min-height: 58px;
+    height: 58px;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 7px;
+  }
+
+  .cashdash-sidebar-fixed.expanded {
+    width: auto;
+    min-width: 0;
+  }
+
+  .cashdash-sidebar-fixed.expanded .nav-item-label { display: none; }
+  .profile-page,
+  .profile-header + main { padding-left: 0; }
+
+  .side-rail.cashdash-sidebar.expanded {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    top: auto;
+    width: auto !important;
+    min-width: 0;
+    min-height: 58px;
+    height: 58px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 7px;
+  }
+
+  .side-rail.cashdash-sidebar.expanded .rail-item {
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .side-rail.cashdash-sidebar.expanded .nav-item-label {
+    display: none;
+  }
+}
+
+/* Stability fixes for bet and account navigation */
+.cashdash-sidebar-fixed .nav-item,
+.side-rail.cashdash-sidebar .rail-item {
+  flex: 0 0 42px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.cashdash-sidebar-fixed.expanded .nav-item,
+.side-rail.cashdash-sidebar.expanded .rail-item {
+  height: 42px;
+  overflow: hidden;
+}
+
+.cashdash-sidebar-fixed.expanded .nav-item-label,
+.side-rail.cashdash-sidebar.expanded .nav-item-label {
+  max-width: 118px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 761px) {
+  .profile-page,
+  .profile-header + main {
+    margin-left: 96px;
+  }
+}

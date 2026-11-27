@@ -18,6 +18,11 @@ body {
   align-items: center;
   overflow-x: hidden;
   position: relative;
+  padding-left: 72px;
+}
+
+@media (max-width: 760px) {
+  body { padding-left: 0; }
 }
 
 /* --- Фон та Сяйво --- */
@@ -79,17 +84,28 @@ body {
 /* --- Логотип --- */
 .logo-container {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   width: 100%;
+  height: 120px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container a {
+  width: min(390px, 85vw);
+  height: 120px;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .logo-img {
-  max-width: 290px;
-  width: 100%;
-  height: auto;
+  width: min(390px, 85vw);
+  height: 120px;
+  object-fit: contain;
   display: block;
+  transform-origin: center;
   transition: transform 0.2s ease;
 }
 
@@ -119,7 +135,7 @@ body {
   letter-spacing: 2px;
   background: linear-gradient(180deg, #ffffff 0%, #c5d1e0 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 6px;
 }
 

@@ -27,11 +27,25 @@ input {
     border-bottom: 1px solid #1e293b;
 }
 
+.profile-brand {
+    display: flex;
+    width: 130px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
 .profile-brand img {
     display: block;
-    width: 116px;
-    height: 44px;
+    width: 130px;
+    height: 40px;
     object-fit: contain;
+    transform-origin: center;
+    transition: transform 0.2s ease;
+}
+
+.profile-brand:hover img {
+    transform: scale(1.12);
 }
 
 .profile-header nav {
@@ -80,8 +94,8 @@ input {
 }
 
 .profile-page {
-    width: min(1160px, calc(100% - 40px));
-    margin: 42px auto 72px;
+    width: min(1160px, calc(100% - 112px));
+    margin: 42px 24px 72px 96px;
 }
 
 .page-heading,
@@ -380,5 +394,11 @@ a:focus-visible {
 
     .stat-item strong {
         font-size: 17px;
+    }
+}
+
+@media (min-width: 761px) {
+    .profile-page {
+        margin-left: 96px;
     }
 }
